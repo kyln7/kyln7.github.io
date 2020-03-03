@@ -46,15 +46,15 @@
   };
 </script>
 
-  <meta name="description" content="懒癌患者缓慢更新进度（随便写一些东西） 命名规范1.规范| 标志符 | 规则 | 实例与描述 || — | — | — ||类Class|Pascal|Application||枚举类型enum|Pascal|记住，是以Pascal命名，切勿包含Enum，否则FXCop会抛出Issue||委托delegate|Pascal|以Pascal命名，不以任何特殊字符串区别于类名、函数名||常量const">
+  <meta name="description" content="懒癌患者缓慢更新进度（随便写一些东西） 命名规范1.规范    标志符 规则 实例与描述    类Class Pascal Application   枚举类型enum Pascal 记住，是以Pascal命名，切勿包含Enum，否则FXCop会抛出Issue   委托delegate Pascal 以Pascal命名，不以任何特殊字符串区别于类名、函数名   常量const 全部大写 全部大写，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSharp">
 <meta property="og:url" content="http://www.kyln7.com/2020/03/03/CSharp/index.html">
 <meta property="og:site_name" content="kyln的小屋">
-<meta property="og:description" content="懒癌患者缓慢更新进度（随便写一些东西） 命名规范1.规范| 标志符 | 规则 | 实例与描述 || — | — | — ||类Class|Pascal|Application||枚举类型enum|Pascal|记住，是以Pascal命名，切勿包含Enum，否则FXCop会抛出Issue||委托delegate|Pascal|以Pascal命名，不以任何特殊字符串区别于类名、函数名||常量const">
+<meta property="og:description" content="懒癌患者缓慢更新进度（随便写一些东西） 命名规范1.规范    标志符 规则 实例与描述    类Class Pascal Application   枚举类型enum Pascal 记住，是以Pascal命名，切勿包含Enum，否则FXCop会抛出Issue   委托delegate Pascal 以Pascal命名，不以任何特殊字符串区别于类名、函数名   常量const 全部大写 全部大写，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-03T06:08:35.000Z">
-<meta property="article:modified_time" content="2020-03-03T06:59:57.382Z">
+<meta property="article:modified_time" content="2020-03-03T07:04:28.209Z">
 <meta property="article:author" content="kyln">
 <meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary">
@@ -200,7 +200,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-03 14:08:35 / 修改时间：14:59:57" itemprop="dateCreated datePublished" datetime="2020-03-03T14:08:35+08:00">2020-03-03</time>
+              <time title="创建时间：2020-03-03 14:08:35 / 修改时间：15:04:28" itemprop="dateCreated datePublished" datetime="2020-03-03T14:08:35+08:00">2020-03-03</time>
             </span>
 
           
@@ -215,7 +215,71 @@
 
       
         <p><em>懒癌患者缓慢更新进度（随便写一些东西）</em></p>
-<h1 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h1><p>1.规范<br>| 标志符 | 规则 | 实例与描述 |<br>| — | — | — |<br>|类Class|Pascal|Application|<br>|枚举类型enum|Pascal|记住，是以Pascal命名，切勿包含Enum，否则FXCop会抛出Issue|<br>|委托delegate|Pascal|以Pascal命名，不以任何特殊字符串区别于类名、函数名|<br>|常量const|全部大写|全部大写，单词间以下划线隔开|<br>|接口interface|Pascal|IDisposable 注：总是以 I 前缀开始，后接Pascal命名|<br>|方法function|Pascal|ToString|<br>|命名空间namespace|Pascal|以.分隔，当每一个限定词均为Pascal命名方式，比如:using ExcelQuicker.Framework|<br>|参数|Camel|首字母小写|<br>|局部变量|Camel|也可以加入类型标识符，比如对于System.String类型，声明变量是以str开头，string strSQL = string.Empty;|<br>|数据成员|Camel|以m开头＋Pascal命名规则，如mProductType（m意味member）|<br>|属性|Pascal||</p>
+<h1 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h1><p>1.规范</p>
+<table>
+<thead>
+<tr>
+<th>标志符</th>
+<th>规则</th>
+<th>实例与描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类Class</td>
+<td>Pascal</td>
+<td>Application</td>
+</tr>
+<tr>
+<td>枚举类型enum</td>
+<td>Pascal</td>
+<td>记住，是以Pascal命名，切勿包含Enum，否则FXCop会抛出Issue</td>
+</tr>
+<tr>
+<td>委托delegate</td>
+<td>Pascal</td>
+<td>以Pascal命名，不以任何特殊字符串区别于类名、函数名</td>
+</tr>
+<tr>
+<td>常量const</td>
+<td>全部大写</td>
+<td>全部大写，单词间以下划线隔开</td>
+</tr>
+<tr>
+<td>接口interface</td>
+<td>Pascal</td>
+<td>IDisposable 注：总是以 I 前缀开始，后接Pascal命名</td>
+</tr>
+<tr>
+<td>方法function</td>
+<td>Pascal</td>
+<td>ToString</td>
+</tr>
+<tr>
+<td>命名空间namespace</td>
+<td>Pascal</td>
+<td>以.分隔，当每一个限定词均为Pascal命名方式，比如:using ExcelQuicker.Framework</td>
+</tr>
+<tr>
+<td>参数</td>
+<td>Camel</td>
+<td>首字母小写</td>
+</tr>
+<tr>
+<td>局部变量</td>
+<td>Camel</td>
+<td>也可以加入类型标识符，比如对于System.String类型，声明变量是以str开头，string strSQL = string.Empty;</td>
+</tr>
+<tr>
+<td>数据成员</td>
+<td>Camel</td>
+<td>以m开头＋Pascal命名规则，如mProductType（m意味member）</td>
+</tr>
+<tr>
+<td>属性</td>
+<td>Pascal</td>
+<td></td>
+</tr>
+</tbody></table>
 <p><del>不一定要参照这个表，写在这里只是提醒自己最基本的东西</del></p>
 <h1 id="方法和作用域"><a href="#方法和作用域" class="headerlink" title="方法和作用域"></a>方法和作用域</h1><p>2.1声明方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">returnType methodName(parameterList)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;这里添加代码主体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
