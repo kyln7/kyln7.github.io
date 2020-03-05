@@ -196,181 +196,8 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-05 20:22:54 / 修改时间：20:23:14" itemprop="dateCreated datePublished" datetime="2020-03-05T20:22:54+08:00">2020-03-05</time>
+              <time title="创建时间：2020-03-05 20:22:54 / 修改时间：20:24:42" itemprop="dateCreated datePublished" datetime="2020-03-05T20:22:54+08:00">2020-03-05</time>
             </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><em>懒癌患者缓慢更新进度（随便写一些东西）</em></p>
-<h1 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h1><p>1.规范</p>
-<table>
-<thead>
-<tr>
-<th>标志符</th>
-<th>规则</th>
-<th>实例与描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>类Class</td>
-<td>Pascal</td>
-<td>Application</td>
-</tr>
-<tr>
-<td>枚举类型enum</td>
-<td>Pascal</td>
-<td>记住，是以Pascal命名，切勿包含Enum，否则FXCop会抛出Issue</td>
-</tr>
-<tr>
-<td>委托delegate</td>
-<td>Pascal</td>
-<td>以Pascal命名，不以任何特殊字符串区别于类名、函数名</td>
-</tr>
-<tr>
-<td>常量const</td>
-<td>全部大写</td>
-<td>全部大写，单词间以下划线隔开</td>
-</tr>
-<tr>
-<td>接口interface</td>
-<td>Pascal</td>
-<td>IDisposable 注：总是以 I 前缀开始，后接Pascal命名</td>
-</tr>
-<tr>
-<td>方法function</td>
-<td>Pascal</td>
-<td>ToString</td>
-</tr>
-<tr>
-<td>命名空间namespace</td>
-<td>Pascal</td>
-<td>以.分隔，当每一个限定词均为Pascal命名方式，比如:using ExcelQuicker.Framework</td>
-</tr>
-<tr>
-<td>参数</td>
-<td>Camel</td>
-<td>首字母小写</td>
-</tr>
-<tr>
-<td>局部变量</td>
-<td>Camel</td>
-<td>也可以加入类型标识符，比如对于System.String类型，声明变量是以str开头，string strSQL = string.Empty;</td>
-</tr>
-<tr>
-<td>数据成员</td>
-<td>Camel</td>
-<td>以m开头＋Pascal命名规则，如mProductType（m意味member）</td>
-</tr>
-<tr>
-<td>属性</td>
-<td>Pascal</td>
-<td></td>
-</tr>
-</tbody></table>
-<p><del>不一定要参照这个表，写在这里只是提醒自己最基本的东西</del></p>
-<h1 id="方法和作用域"><a href="#方法和作用域" class="headerlink" title="方法和作用域"></a>方法和作用域</h1><h2 id="声明方法"><a href="#声明方法" class="headerlink" title="声明方法"></a>声明方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">returnType methodName(parameterList)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;这里添加代码主体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="从方法返回数据"><a href="#从方法返回数据" class="headerlink" title="从方法返回数据"></a>从方法返回数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int addValues(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;...</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果不需要返回数据，则返回类型为void</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void show(int answer)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;...</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用表达式主体方法"><a href="#使用表达式主体方法" class="headerlink" title="使用表达式主体方法"></a>使用表达式主体方法</h2><p>C#允许以一种简化的方式写由单个表达式构成的方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int addValues(int a,int b) &#x3D;&gt; a + b;</span><br><span class="line"></span><br><span class="line">void show(int answer) &#x3D;&gt; Console.WriteLine($&quot;The answer is &#123;answer&#125;&quot;);</span><br></pre></td></tr></table></figure>
-<h3 id="关于-string-interpolation-字符串插值"><a href="#关于-string-interpolation-字符串插值" class="headerlink" title="关于$(string interpolation 字符串插值)"></a>关于$(string interpolation 字符串插值)</h3><p>当一个内插字符串被解析为一个结果字符串时，其将被代替</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string name &#x3D; &quot;Mark&quot;;</span><br><span class="line">var date &#x3D; DateTime.Now;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;composite formatting:</span><br><span class="line">Console.WriteLine(&quot;Hello,&#123;0&#125;! Today is &#123;1&#125;, it&#39;s &#123;2:HH:mm&#125; now.&quot;,name,date.DayOfWeek,date);</span><br><span class="line">&#x2F;&#x2F;string interpolation:</span><br><span class="line">Console.WriteLine($&quot;Hello,&#123;name&#125;! Today is &#123;date.DayOfWeek&#125;, it&#39;s &#123;date:HH:mm&#125; now.&quot;)</span><br></pre></td></tr></table></figure>
-<p>关于更多：<a href="https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/tokens/interpolated" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/tokens/interpolated</a></p>
-<h2 id="方法访问"><a href="#方法访问" class="headerlink" title="方法访问"></a>方法访问</h2><p>调用对象上的方法就像访问字段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Test&#123;</span><br><span class="line">    public double GetPi()&#123;</span><br><span class="line">        return 3.14;</span><br><span class="line">    &#125;</span><br><span class="line">    static void Main()&#123;</span><br><span class="line">        Test test &#x3D; new Test();</span><br><span class="line">        double pi &#x3D; test.GetPi();</span><br><span class="line">        Console.WriteLine(pi);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="静态类和静态类成员"><a href="#静态类和静态类成员" class="headerlink" title="静态类和静态类成员"></a>静态类和静态类成员</h1><h2 id="静态类"><a href="#静态类" class="headerlink" title="静态类"></a>静态类</h2><p>静态类基本上与非静态类相同，但存在一个差异：静态类无法实例化。 换句话说，无法使用<code>new</code>运算符创建类类型的变量。<br>由于不存在任何实例变量，因此可以使用类名本身访问静态类的成员。<br>静态类可以用作只对输入参数进行操作并且不必获取或设置任何内部实例字段的方法集的方便容器。 例如，在<code>.NET Framework</code>类库中，静态<code>System.Math</code>类包含执行数学运算，而无需存储或检索对<code>Math</code>类特定实例唯一的数据的方法。 即，通过指定类名和方法名称来应用类的成员，如下面的示例所示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">double dub &#x3D; -3.14;  </span><br><span class="line">Console.WriteLine(Math.Abs(dub));  </span><br><span class="line">Console.WriteLine(Math.Floor(dub));  </span><br><span class="line">Console.WriteLine(Math.Round(Math.Abs(dub)));  </span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F; Output:  </span><br><span class="line">&#x2F;&#x2F; 3.14  </span><br><span class="line">&#x2F;&#x2F; -4  </span><br><span class="line">&#x2F;&#x2F; 3</span><br></pre></td></tr></table></figure>
-<h2 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h2><p>非静态类可以包含静态方法、字段、属性或事件。 即使未创建类的任何实例，也可对类调用静态成员。 静态成员始终按类名（而不是实例名称）进行访问。 静态成员只有一个副本存在（与创建的类的实例数有关）。 静态方法和属性无法在其包含类型中访问非静态字段和事件，它们无法访问任何对象的实例变量，除非在方法参数中显式传递它。<br>更典型的做法是声明具有一些静态成员的非静态类（而不是将整个类都声明为静态）。 静态字段的两个常见用途是保留已实例化的对象数的计数，或是存储必须在所有实例间共享的值。<br>静态方法可以进行重载，但不能进行替代，因为它们属于类，而不属于类的任何实例。</p>
-<h1 id="管理错误和异常"><a href="#管理错误和异常" class="headerlink" title="管理错误和异常"></a>管理错误和异常</h1><h1 id="流与I-O-（等待"><a href="#流与I-O-（等待" class="headerlink" title="流与I/O （等待"></a>流与I/O （等待</h1><p>System.IO命名空间<br>1.Stream类<br>-按存取位置分类[FileStream,MemoryStream,BufferedStream]<br>2.读写类<br>-BinaryReader和BinaryWriter<br>-TextReader和TextWriter[StreamReader,StreamWriter,StringReader,StringWriter]<br>关系：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileStream fs &#x3D; new FileStream(@&quot;c:\temp\foo.txt&quot;,FileMode.Create);</span><br><span class="line">StreamWriter writer &#x3D; new StreamWriter(fs);</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h1 id="委托和事件"><a href="#委托和事件" class="headerlink" title="委托和事件"></a>委托和事件</h1><h2 id="委托"><a href="#委托" class="headerlink" title="委托"></a>委托</h2><p>委托可以提高代码的可扩展性和灵活性。<br>委托是安全封装方法的类型，类似于 C 和 C++ 中的函数指针。 与 C 函数指针不同的是，委托是面向对象的、类型安全的和可靠的。 委托的类型由委托的名称确定。<br>以下示例声明名为 Del 的委托，该委托可以封装采用字符串作为参数并返回 void 的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public delegate void Del(string message);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Create a method for a delegate.</span><br><span class="line">public static void DelegateMethod(string message)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Instantiate the delegate.</span><br><span class="line">Del handler &#x3D; DelegateMethod;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Call the delegate.</span><br><span class="line">handler(&quot;Hello World&quot;);</span><br></pre></td></tr></table></figure>
-<h3 id="使用操作符"><a href="#使用操作符" class="headerlink" title="使用操作符"></a>使用操作符</h3><p>使用+=操作符让实例引用匹配的方法，使用-=移除方法。</p>
-<p>为了使委托的主体独立于各种方法的主体，有几种选项：<br>1.将委托变量声明为公共的 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public MyDelegate pDelegate;</span><br></pre></td></tr></table></figure>
-<p>2.保持私有，提供读写属性来访问</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">private MyDelegate pDelegate;</span><br><span class="line"></span><br><span class="line">public MyDelegate PDelegate&#123;</span><br><span class="line">    get&#123;</span><br><span class="line">        return this.pDelegate;</span><br><span class="line">    &#125;</span><br><span class="line">    set&#123;</span><br><span class="line">        this.pDelegate &#x3D; value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3.实现单独的添加/删除方法来提供完全的封装性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void Add(MyDelegate myMethod)&#123;</span><br><span class="line">    this.pDelegate +&#x3D; myMethod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>类 或对象可以通过事件向其他类或对象通知发生的相关事情。 发送（或引发 ）事件的类称为“发布者” ，接收（或处理 ）事件的类称为“订阅者” 。</p>
-<h3 id="声明事件"><a href="#声明事件" class="headerlink" title="声明事件"></a>声明事件</h3><p>用以下语法声明事件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">event delegateTypeName eventName &#x2F;&#x2F;delegateTypeName是委托类型名称，eventName是事件名称。</span><br></pre></td></tr></table></figure>
-<h3 id="订阅事件"><a href="#订阅事件" class="headerlink" title="订阅事件"></a>订阅事件</h3><p>类似于委托，事件也用+=操作符进行订阅。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class TemperatureMonitor</span><br><span class="line">&#123;</span><br><span class="line">    public delegate void StopMachineDelegate();</span><br><span class="line">    public event StopMachineDelegate MachineOverHeating;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">TemperatureMonitor.MachineOverHeating +&#x3D; painter.PaintOff;</span><br><span class="line">&#x2F;&#x2F;当MachineOverHeating事件发生时，会调用painter.PaintOff方法。</span><br></pre></td></tr></table></figure>
-<p>对应地，-=操作符用于取消订阅事件。</p>
-<h3 id="引发事件"><a href="#引发事件" class="headerlink" title="引发事件"></a>引发事件</h3><p>事件可以像方法一样调用来引发。引发事件后，所有和事件关联的委托会被依次调用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class TemperatureMonitor</span><br><span class="line">&#123;</span><br><span class="line">    public delegate void StopMachineDelegate;</span><br><span class="line">    public event StopMachineDelegate MachineOverHeating;</span><br><span class="line"></span><br><span class="line">    private void Notify()</span><br><span class="line">    &#123;</span><br><span class="line">        if(this.MachineOverHeating !&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            this.MachineOverHeating();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.kyln7.com/2020/03/03/C#%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/kyln.png">
-      <meta itemprop="name" content="kyln">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kyln的小屋">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/C#%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">C#基础</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-03 14:08:35" itemprop="dateCreated datePublished" datetime="2020-03-03T14:08:35+08:00">2020-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-05 20:21:04" itemprop="dateModified" datetime="2020-03-05T20:21:04+08:00">2020-03-05</time>
-              </span>
 
           
 
@@ -678,12 +505,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
